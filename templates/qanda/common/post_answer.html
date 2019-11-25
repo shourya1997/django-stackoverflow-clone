@@ -1,0 +1,11 @@
+{% load crispy_froms_tags %}
+
+<div class="col-sm-12" >
+    <h3> Post your answer </h3>
+    <form method="POST" action="{% url "qanda:answer_question" pk=question.id %}" >
+        {{ asnwer_form | crispy }}
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit" name="action" value="PREVIEW" > Preview </button>
+        <button class="btn btn-primary" type="submit" name="action" value="SAVE" > Answer </button>
+    </form>
+</div>
