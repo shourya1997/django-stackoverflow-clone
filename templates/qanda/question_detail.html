@@ -6,7 +6,7 @@
     {% include "qanda/common/display_question.html" %}
     {% include "qanda/common/list_answer.html" %}
     {% if user.is_authenticated %}
-        {% include "qanda/common/question_post_answer.html" %}
+        {% include "qanda/common/post_answer.html" %}
     {% else %}
         <div> Login to post answers. </div>
     {% endif %}

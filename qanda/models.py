@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls.base import reverse
+from django.shortcuts import redirect
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class Question(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('questions:question_detail',kwargs={'pk':self.id})
+        return reverse('qanda:question_detail',kwargs={'pk':self.id})
 
     def can_accept_answers(self, user):
         return user == self.user
