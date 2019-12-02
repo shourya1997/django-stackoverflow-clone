@@ -6,6 +6,6 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 class RegisterView(CreateView):
-    template_name = 'user/register.html'
+    template_name = 'registration/register.html'
     form_class = UserCreationForm
     success_url = reverse_lazy("qanda:ask")
