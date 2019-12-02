@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="col-sm-12">
+    <h1>Register for Answerly</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-primary" > Register </button>
+    </form>
+</div>
+{% endblock %}
