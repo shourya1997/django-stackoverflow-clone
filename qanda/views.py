@@ -4,7 +4,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, DayArchiveV
 from django.utils import timezone
 from qanda.forms import QuestionForm, AnswerForm, AnswerAcceptedForm
 from qanda.models import Question, Answer
-
+from django.urls import reverse
 from django.http import HttpResponseBadRequest, HttpResponseRedirect
 
 
@@ -111,8 +111,3 @@ class TodayQuestionList(RedirectView):
                 'year': today.year,
             }
         )
-
-
-
-    
-

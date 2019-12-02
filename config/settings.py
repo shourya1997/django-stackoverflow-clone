@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'qanda',
     'user',
+
     'crispy_forms',
     'markdownify'
 ]
@@ -139,3 +140,7 @@ MARKDOWNIFY_WHITELIST_TAGS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'questions:ask'
+LOGOUT_REDIRECT_URL = 'questions:today_questions'
