@@ -42,3 +42,20 @@ def searchQuestions(query):
         },
     })
     return (h['_source'] for h in result['hits']['hits'])
+
+def upsert(question_model):
+    client = get_client()
+    question_dict = question_model.as_elasticsearch_dict()
+    doc_type = question_dict['_type']
+    del question_dict['_id']
+    del question_dict['_type']
+    response = client.update(
+            settings.ES_INDEX,
+            doc_type,
+            id=question_model.id,
+            body={
+                'doc': question_dict,
+                'doc_as_upsert': True,
+            }        
+        )
+    return response
