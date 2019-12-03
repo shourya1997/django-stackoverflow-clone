@@ -9,5 +9,6 @@ urlpatterns = [
     path('q/<int:pk>/accept', views.UpdateAnswerAcceptance.as_view(), name='update_answer_acceptance'),
     path('daily/<int:year>/<int:month>/<int:day>/', views.DailyQuestionList.as_view(), name='daily_questions'),
     path('daily/', views.TodayQuestionList.as_view(), name='today_questions'),
+    path('q/search', views.SearchView.as_view(), name='question_search'),
     
 ]

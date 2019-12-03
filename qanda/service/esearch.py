@@ -32,4 +32,13 @@ def bulk_load(questions):
 
     return all_ok
 
-# print(get_client())
+def searchQuestions(query):
+    client = get_client()
+    result = client.search(index=settings.ES_INDEX, body={
+        'query': {
+            'match': {
+                'text':query,
+            },
+        },
+    })
+    return (h['_source'] for h in result['hits']['hits'])
