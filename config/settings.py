@@ -141,6 +141,12 @@ MARKDOWNIFY_WHITELIST_TAGS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_URL = 'user:login'
-LOGIN_REDIRECT_URL = 'questions:ask'
+LOGIN_URL           = 'user:login'
+LOGIN_REDIRECT_URL  = 'questions:ask'
 LOGOUT_REDIRECT_URL = 'questions:today_questions'
+
+# Elasticsearch
+
+ES_INDEX = 'answerly'
+ES_HOST  = 'localhost'
+ES_PORT  = '9200'

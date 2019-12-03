@@ -20,6 +20,16 @@ class Question(models.Model):
     def can_accept_answers(self, user):
         return user == self.user
 
+    def as_elasticsearch_dict(self):
+        return {
+            '_id': self.id,
+            '_type': 'doc',
+            'text': '{}\n{}'.format(self.title, self.question),
+            'title':self.title,
+            'id': self.id,
+            'created': self.created,
+        }
+
 class Answer(models.Model):
     answer = models.TextField()
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
