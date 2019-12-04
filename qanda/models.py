@@ -26,7 +26,8 @@ class Question(models.Model):
         return {
             '_id': self.id,
             '_type': 'doc',
-            'text': '{}\n{}'.format(self.title, self.question),
+            'text': f'{self.title}\n{self.question}',
+            'question_body': self.question,
             'title':self.title,
             'id': self.id,
             'created': self.created,
@@ -37,7 +38,7 @@ class Question(models.Model):
                      force_update=force_update,
                      using=using,
                      update_fields=update_fields)
-        return esearch(self)
+        return esearch.upsert(self)
 
 class Answer(models.Model):
     answer = models.TextField()
