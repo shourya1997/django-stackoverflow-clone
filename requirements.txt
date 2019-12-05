@@ -8,3 +8,5 @@ django-crispy-forms==1.7.0
 elasticsearch==7.1.0
 coverage==4.4.2
 factory-boy==2.9.2
+selenium==3.141.0
+
