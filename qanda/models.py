@@ -26,7 +26,7 @@ class Question(models.Model):
         return {
             '_id': self.id,
             '_type': 'doc',
-            'text': f'{self.title}\n{self.question}',
+            'text': '{}\n{}'.format(self.title, self.question),
             'question_body': self.question,
             'title':self.title,
             'id': self.id,

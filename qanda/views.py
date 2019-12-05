@@ -35,7 +35,7 @@ class AskQuestionView(LoginRequiredMixin, CreateView):
 
         return HttpResponseBadRequest()
 
-class QuestionDeatilView(DetailView):
+class QuestionDetailView(DetailView):
     model = Question
 
     ACCEPT_FORM = AnswerAcceptedForm(initial={'accepted':True})

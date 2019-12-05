@@ -5,8 +5,7 @@
     <h1>Highest Voted Questions of {{ day }}</h1>
     <ul>
         {% for question in object_list %}
-        <li>
-            {{ question.votes }}
+        <li>            
             <a href="{{ question.get_absolute_url }}" >
                 {{ question }}
             </a>
