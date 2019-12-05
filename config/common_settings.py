@@ -20,10 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n^envq-8k*&9&@%s6jogj4v_!z*8$=($g^c8z(-y@%nkkji1gc'
+# SECRET_KEY = 'n^envq-8k*&9&@%s6jogj4v_!z*8$=($g^c8z(-y@%nkkji1gc'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -80,17 +81,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # Setting-up POSTGRESQL - https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'answerly',
+#         'USER': 'answerly',
+#         'PASSWORD': 'development',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'answerly',
-        'USER': 'answerly',
-        'PASSWORD': 'development',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -131,7 +136,7 @@ USE_TZ = True
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATIC_URL = '/static/'
 
 MARKDOWNIFY_STRIP = False
