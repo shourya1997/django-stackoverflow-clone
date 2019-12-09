@@ -16,3 +16,6 @@ elasticsearch==7.1.0
 ## docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.4.2 
 # Pull postrgeSQL and bind to localhost: 5432
 ## sudo docker run -d -p 5432:5432 postgres:12.1
+
+# Install packages in Apache Docker
+## apt install -y $(cat answerly/ubuntu/packages.txt)
