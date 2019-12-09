@@ -3,10 +3,16 @@ psycopg2==2.8
 django-markdownify==0.2.2
 django-crispy-forms==1.7.0
 
-# docker pull docker.elastic.co/elasticsearch/elasticsearch:7.4.2
-# docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.4.2 
 elasticsearch==7.1.0
 # coverage==4.4.2
 # factory-boy==2.9.2
 # selenium==3.141.0
 
+# Docker Commands to run project
+# Run Apache and bind to localhost port 80
+## sudo docker run -d -p 80:80 httpd 
+# Pull Elasticsearch and bind to localhost: 9200 and 9300
+## docker pull docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+## docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.4.2 
+# Pull postrgeSQL and bind to localhost: 5432
+## sudo docker run -d -p 5432:5432 postgres:12.1
