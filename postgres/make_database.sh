@@ -1,6 +1,12 @@
 #! /usr/bin/env bash
 
-psql -v ON_ERROR_STOP=1 <<-EOSQL
+export DJANGO_DB_NAME='answerly'
+export DJANGO_DB_USER='answerly'
+export DJANGO_DB_PASSWORD='development'
+export DJANGO_DB_HOST='172.17.0.4'
+export DJANGO_DB_PORT='5432'
+
+psql -h 127.0.0.1 -p 5432 -v ON_ERROR_STOP=1 <<-EOSQL
     CREATE DATABASE $DJANGO_DB_NAME;
     CREATE USER $DJANGO_DB_USER;
     GRANT ALL ON DATABASE $DJANGO_DB_NAME to "$DJANGO_DB_USER";
