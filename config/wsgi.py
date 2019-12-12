@@ -8,9 +8,15 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os
-
+import configparser
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
+if not os.environ.get('DJANGO_SETTINGS_MODULE'):
+    parser = configparser.ConfigParser()
+    parser.read('/etc/answerly/answerly.ini')
+    for name, val in parser['mod_wsgi'].items():
+        os.environ[name.upper()] = val
 
 application = get_wsgi_application()
