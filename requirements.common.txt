@@ -1,0 +1,6 @@
+django==2.2.7
+psycopg2==2.8
+django-markdownify==0.2.2
+django-crispy-forms==1.7.0
+
+elasticsearch==7.1.0
