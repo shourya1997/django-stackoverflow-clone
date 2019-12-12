@@ -16,4 +16,4 @@ DATABASES['default'].update({
         'HOST'    : os.getenv('DJANGO_DB_HOST'),
         'PORT'    : os.getenv('DJANGO_DB_PORT'),
     }
-})
+)
