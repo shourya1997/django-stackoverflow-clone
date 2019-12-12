@@ -1,1 +1,49 @@
+### Django ###
+*.log
+*.pot
 *.pyc
+__pycache__/
+local_settings.py
+
+# mypy
+.mypy_cache/
+
+.env
+db.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# django migrations 
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
