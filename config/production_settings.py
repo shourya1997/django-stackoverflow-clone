@@ -3,7 +3,7 @@ import os
 
 DEBUG = False
 
-assert SECRET_KEY is None, ('Please provide DJANGO_SECRET_KEY environment variable with a value')
+assert SECRET_KEY is not None, ('Please provide DJANGO_SECRET_KEY environment variable with a value')
 
 ALLOWED_HOSTS += [
     os.getenv('DJANGO_ALLOWED_HOSTS')
