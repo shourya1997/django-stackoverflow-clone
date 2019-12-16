@@ -17,6 +17,10 @@ This is a simple Django 2.0+ project. Here I build a Stack Overflow clone called
 ```bash
 $ git clone https://github.com/shourya1997/django-stackoverflow-clone
 
+# create python virtual environment
+$ python3 -m venv myenv
+$ source myenv/bin/activate
+
 # -- developement requirements file
 $ pip install -r requirements.developement.txt
 
@@ -30,7 +34,10 @@ $ pip install -r requirements.production.txt
 ```bash
 
 # -- common settings
-$ python manage.py --settings=config.common_settings
+$ python manage.py runserver --settings=config.common_settings 
+
+# -- developement settings
+$ python manage.py runserver --settings=config.dev_settings
 
 ```
 ### For running in production settings
