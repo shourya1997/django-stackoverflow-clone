@@ -1,4 +1,4 @@
-# Django 2.0+ project template
+# Answerly
 
 This is a simple Django 2.0+ project. Here I build a Stack Overflow clone called Answerly. Users can register for Answerly and will be able to ask and answer questions. A question's asker will also be able to accept answers to mark them useful and search similar type of questions.
 
