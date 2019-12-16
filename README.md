@@ -31,6 +31,8 @@ $ pip install -r requirements.production.txt
 
 ## How to run
 
+Set the Environment variables in *Apache/localhost* (where ever you are deploying) mentioned in [answerly.ini](answerly.ini) and then run the following.
+
 ```bash
 
 # -- common settings
@@ -39,14 +41,8 @@ $ python manage.py runserver --settings=config.common_settings
 # -- developement settings
 $ python manage.py runserver --settings=config.dev_settings
 
-```
-### For running in production settings
-
-Set the Environment variables in *Apache Server/localhost* (where ever you are deploying) mentioned in [answerly.ini](answerly.ini) and then run the following.
-
-```bash
-
-$ python manage.py --settings=config.production_settings
+# -- production settings
+$ python manage.py runserver --settings=config.production_settings
 
 ```
 
