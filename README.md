@@ -22,7 +22,7 @@ $ python3 -m venv myenv
 $ source myenv/bin/activate
 
 # -- developement requirements file
-$ pip install -r requirements.developement.txt
+$ pip install -r requirements.development.txt
 
 # -- production requirements file
 $ pip install -r requirements.production.txt
