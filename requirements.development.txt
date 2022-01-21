@@ -1,5 +1,5 @@
 -r requirements.common.txt
-ipython==6.2.1
+ipython==7.16.3
 coverage==4.4.2
 factory-boy==2.9.2
 selenium==3.141.0
